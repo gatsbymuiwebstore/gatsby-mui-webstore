@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { storeContext } from "../components/store"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import html from "raw-loader!../../assets/main.html"
 import { makeStyles } from "@material-ui/core/styles"
 
@@ -28,7 +28,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <SEO title="" />
+      <Seo title="" />
       <div className={classes.root} dangerouslySetInnerHTML={{__html: html}} />
     </>
   )

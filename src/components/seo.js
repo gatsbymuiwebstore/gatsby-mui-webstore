@@ -1,5 +1,5 @@
 /**
- * SEO component that queries for data with
+ * Seo component that queries for data with
  *  Gatsby's useStaticQuery React hook
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
@@ -9,8 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 
-function SEO({ description, lang, meta, image: metaImage, title: metaTitle }) {
+function Seo({ description, lang, meta, image: metaImage, title: metaTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +29,7 @@ function SEO({ description, lang, meta, image: metaImage, title: metaTitle }) {
 
   const title = metaTitle.length !== 0 ? metaTitle : site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
-  const image = metaImage || {src: "/icons/icon-1200x630.png", width: 1200, height: 630}
+  const image = {src: getSrc(metaImage) || "/icons/icon-1200x630.png", width: 1200, height: 630}
 
   return (
     <Helmet
@@ -208,22 +209,21 @@ function SEO({ description, lang, meta, image: metaImage, title: metaTitle }) {
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
   }),
 }
 
-export default SEO
+export default Seo

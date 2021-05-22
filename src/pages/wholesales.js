@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { storeContext } from "../components/store"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const WholesalesPage = () => {
   const { dispatch } = useContext(storeContext)
@@ -12,7 +12,7 @@ const WholesalesPage = () => {
 
   return (
     <>
-      <SEO title="Wholesales" />
+      <Seo title="Wholesales" />
       <p>Do contact us for more details.</p>
     </>
   )

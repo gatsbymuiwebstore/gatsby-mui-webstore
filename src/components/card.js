@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, getSrc } from "gatsby-plugin-image"
 import { storeContext } from "./store"
 import logo from "../../assets/logos/logo.svg"
 import SwipeableViews from "react-swipeable-views"
@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default ({ data, images }) => {
+export default function CardComponent({ data, images }) {
   const classes = useStyles()
   const {state, dispatch} = useContext(storeContext)
   const [payload, setPayload] = useState(data[0])
@@ -76,10 +76,10 @@ export default ({ data, images }) => {
 
   return (
     <Card>
-      {images[0] ?
+      {images.length !== 0 ?
         <>
           <SwipeableViews enableMouseEvents>
-            {images.map((item, index) => <GatsbyImage image={item.childImageSharp.gatsbyImageData} key={index} />)}
+            {images.map((item, index) => <GatsbyImage image={getImage(item.childImageSharp.image)} alt={item.name} key={index} />)}
           </SwipeableViews>
           <Link
             to={'/' + data[0].category.toLowerCase().replace(/\s+/g, '-').slice(0, 200) + '/' + data[0].product.toLowerCase().replace(/\s+/g, '-').slice(0, 200)}
@@ -107,7 +107,7 @@ export default ({ data, images }) => {
             aria-label="add to cart"
             size="medium"
             color="primary"
-            onClick={() => dispatch({type: 'incrementQty', payload: {...payload, image:images[0]?.childImageSharp.resize.src}})}
+            onClick={() => dispatch({type: 'incrementQty', payload: {...payload, image: getSrc(images[0]?.childImageSharp.icon)}})}
           >
             <Badge
               classes={{badge: classes.badge}}

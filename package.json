@@ -19,7 +19,7 @@
     "formik-material-ui-pickers": "^0.0.12",
     "gatsby": "^3.5.1",
     "gatsby-plugin-image": "^1.5.0",
-    "gatsby-plugin-js-fallback": "^1.0.0",
+    "gatsby-plugin-js-fallback": "https://github.com/loongyh/gatsby-plugin-js-fallback.git#patch-1",
     "gatsby-plugin-layout": "^2.5.0",
     "gatsby-plugin-manifest": "^3.5.0",
     "gatsby-plugin-material-ui": "^3.0.1",

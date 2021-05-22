@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha"
 import sgQRCode from "../../assets/sgqr.png"
 import sgQRLogo from "../../assets/logos/sgqr.png"
 import { storeContext } from "../components/store"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import {
   makeStyles,
   Box,
@@ -225,7 +225,7 @@ const SuccessPage = ({ location }) => {
 
   return (
     <>
-      <SEO title="Order Summary" />
+      <Seo title="Order Summary" />
       {location.state ?
         <Box className={classes.root}>
           <TableContainer component={Paper}>

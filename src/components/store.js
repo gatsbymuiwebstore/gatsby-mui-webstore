@@ -1,5 +1,6 @@
 import React, { useReducer, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 import createClone from "rfdc"
 import { v4 as uuidv4 } from "uuid"
 
@@ -274,14 +275,18 @@ const Provider = props => {
   const query = useStaticQuery(
     graphql`
       query {
-        allFile(sort: {fields: childImageSharp___resize___originalName, order: ASC}) {
+        allFile(filter: {name: {glob: "*-*-1"}}) {
           nodes {
             childImageSharp {
-              resize(width: 128, height: 128, quality: 90) {
-                originalName
-                src
-              }
+              gatsbyImageData(
+                width: 128
+                height: 128
+                quality: 90
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
+            name
           }
         }
         allGoogleSpreadsheetProducts {
@@ -335,8 +340,8 @@ const Provider = props => {
       const getMetadata = item => {
         const node = query.allGoogleSpreadsheetProducts.nodes.find(node => node.sku === item.sku)
         if (node) {
-          const glob = str => str?.split('-', 2).join('-') + '-'
-          const image = query.allFile.nodes.find(imageNode => glob(imageNode.childImageSharp?.resize.originalName) === glob(item.sku))
+          const glob = str => str?.split('-', 2).join('-')
+          const image = query.allFile.nodes.find(imageNode => glob(imageNode.name) === glob(item.sku))
           return {
             ...node,
             ...item,
@@ -346,7 +351,7 @@ const Provider = props => {
             minQty: parseInt(node.minQty),
             delay: node.delay.toLowerCase().includes('yes'),
             available: node.available.toLowerCase().includes('yes'),
-            image: image?.childImageSharp.resize.src,
+            image: getSrc(image),
           }
         } else return item
       }
@@ -408,7 +413,10 @@ const Provider = props => {
   )
 }
 
-export default ({ element }) =>
-  <Provider>
-    {element}
-  </Provider>
+export default function Store({ element }) {
+  return (
+    <Provider>
+      {element}
+    </Provider>
+  )
+}

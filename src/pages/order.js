@@ -9,7 +9,7 @@ import { CheckboxWithLabel, TextField as FormikTextField, RadioGroup, Select } f
 import { DatePicker } from "formik-material-ui-pickers"
 import { string, object } from "yup"
 import ReCAPTCHA from "react-google-recaptcha"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { storeContext } from "../components/store"
 import {
   makeStyles,
@@ -216,7 +216,7 @@ const OrderPage = () => {
 
   return (
     <>
-      <SEO title="Order" />
+      <Seo title="Order" />
       {state.cart.length !== 0 ?
         <Box className={classes.root}>
           <TableContainer component={Paper}>
