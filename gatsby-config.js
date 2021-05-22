@@ -27,6 +27,7 @@ module.exports = {
         theme_color: process.env.GATSBY_SITE_COLOR_PRI_MAIN,
         display: `standalone`,
         icon: `assets/logos/logo.svg`, // This path is relative to the root of the site.
+        cache_busting_mode: `none`,
       }
     },
     {
