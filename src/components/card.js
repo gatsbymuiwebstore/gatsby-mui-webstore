@@ -59,7 +59,7 @@ export default function CardComponent({ data, images }) {
 
   const unitPrice = available ?
     <Typography className={classes.price} color="primary" style={{fontWeight:'bold'}} noWrap>
-      ${state.altPrices ? payload.altPrice : payload.price} / {payload.unit}
+      ${state.altPrices ? payload.altPrice.toFixed(2) : payload.price.toFixed(2)} / {payload.unit}
     </Typography> :
     <Typography className={classes.price} color="error" style={{fontWeight:'bold'}} noWrap>
       Sold Out

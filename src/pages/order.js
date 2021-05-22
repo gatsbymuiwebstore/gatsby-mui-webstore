@@ -291,7 +291,7 @@ const OrderPage = () => {
                           aria-label="change quantity"
                         />
                       </TableCell>
-                      <TableCell align="center"><Typography>${price}</Typography></TableCell>
+                      <TableCell align="center"><Typography>${price.toFixed(2)}</Typography></TableCell>
                       <TableCell><Typography>${(price * item.qty).toFixed(2)}</Typography></TableCell>
                     </TableRow>
                   )
