@@ -67,15 +67,11 @@ query ($glob: String!) {
       childImageSharp {
         image: gatsbyImageData(
           layout: FULL_WIDTH
-          quality: 90
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
         )
         seo: gatsbyImageData(
           layout: FIXED
           width: 1200
           height: 630
-          quality: 90
           backgroundColor: "white"
           transformOptions: {fit: CONTAIN}
         )

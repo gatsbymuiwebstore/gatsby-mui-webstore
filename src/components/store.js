@@ -281,9 +281,6 @@ const Provider = props => {
               gatsbyImageData(
                 width: 128
                 height: 128
-                quality: 90
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
               )
             }
             name

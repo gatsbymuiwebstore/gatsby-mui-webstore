@@ -50,18 +50,12 @@ query ($category: String!, $glob: String!) {
         image: gatsbyImageData(
           width: 1200
           height: 800
-          quality: 90
           backgroundColor: "white"
-          placeholder: BLURRED
           transformOptions: {fit: CONTAIN}
-          formats: [AUTO, WEBP, AVIF]
         )
         icon: gatsbyImageData(
           width: 128
           height: 128
-          quality: 90
-          placeholder: BLURRED
-          formats: [AUTO, WEBP, AVIF]
         )
       }
       name
