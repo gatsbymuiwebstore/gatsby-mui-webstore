@@ -1,5 +1,9 @@
 # Gatsby Material-UI Webstore
 
+## Demo
+
+Check out the demo [here](https://gatsby-mui-webstore.netlify.app/).
+
 ## Introduction
 
 Full stack Gatsby-based Material-UI ecommerce webstore, designed to be maintained with familiar Google tools:
