@@ -6194,9 +6194,10 @@ gatsby-plugin-image@^1.5.0:
     objectFitPolyfill "^2.3.0"
     prop-types "^15.7.2"
 
-"gatsby-plugin-js-fallback@https://github.com/loongyh/gatsby-plugin-js-fallback.git#patch-1":
-  version "1.0.0"
-  resolved "https://github.com/loongyh/gatsby-plugin-js-fallback.git#0f6740feb18b38c85811ec4ed4e57ae0966639a0"
+gatsby-plugin-js-fallback@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-js-fallback/-/gatsby-plugin-js-fallback-1.0.1.tgz#300e25c7cfec7762c8e293890bed607b28962632"
+  integrity sha512-O2YKtJN5omUHJ9lPLu6VJKn1UM830YXT+t87Jz0+u1zPezr/AjFhkYe9DqahrPulyKtvgBSqpaRWv4lVf5TsiQ==
 
 gatsby-plugin-layout@^2.5.0:
   version "2.5.0"
