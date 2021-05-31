@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const OrderPage = () => {
+export default function OrderPage() {
   const classes = useStyles()
   const { state, dispatch } = useContext(storeContext)
   const recaptchaRef = useRef()
@@ -634,5 +634,3 @@ const OrderPage = () => {
     </>
   )
 }
-
-export default OrderPage

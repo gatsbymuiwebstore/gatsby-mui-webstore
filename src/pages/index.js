@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const IndexPage = () => {
+export default function IndexPage() {
   const classes = useStyles()
   const { dispatch } = useContext(storeContext)
 
@@ -33,5 +33,3 @@ const IndexPage = () => {
     </>
   )
 }
-
-export default IndexPage

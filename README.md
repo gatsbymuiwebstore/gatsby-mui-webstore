@@ -2,7 +2,7 @@
 
 ## Demo
 
-Check out the demo [here](https://gatsby-mui-webstore.netlify.app/).
+Check out the demo [here](https://gmws.netlify.app/).
 
 ## Introduction
 

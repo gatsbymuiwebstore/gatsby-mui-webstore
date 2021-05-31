@@ -3,7 +3,7 @@ import { storeContext } from "../components/store"
 import Seo from "../components/seo"
 import { Typography } from "@material-ui/core"
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   const { dispatch } = useContext(storeContext)
 
   useEffect(() => {
@@ -19,5 +19,3 @@ const NotFoundPage = () => {
     </>
   )
 }
-
-export default NotFoundPage

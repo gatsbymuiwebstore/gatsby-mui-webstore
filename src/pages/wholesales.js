@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { storeContext } from "../components/store"
 import Seo from "../components/seo"
 
-const WholesalesPage = () => {
+export default function WholesalesPage() {
   const { dispatch } = useContext(storeContext)
 
   useEffect(() => {
@@ -17,5 +17,3 @@ const WholesalesPage = () => {
     </>
   )
 }
-
-export default WholesalesPage

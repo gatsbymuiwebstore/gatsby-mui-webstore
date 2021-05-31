@@ -11,7 +11,24 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { getSrc } from "gatsby-plugin-image"
 
-function Seo({ description, lang, meta, image: metaImage, title: metaTitle }) {
+Seo.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
+
+Seo.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+  }),
+}
+
+export default function Seo({ description, lang, meta, image: metaImage, title: metaTitle }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -208,22 +225,3 @@ function Seo({ description, lang, meta, image: metaImage, title: metaTitle }) {
     />
   )
 }
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-  }),
-}
-
-export default Seo

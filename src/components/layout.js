@@ -46,7 +46,11 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Layout = ({ children }) => {
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default function Layout({ children }) {
   const classes = useStyles()
   const { state, dispatch } = useContext(storeContext)
 
@@ -92,9 +96,3 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout

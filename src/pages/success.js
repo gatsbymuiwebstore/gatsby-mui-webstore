@@ -86,7 +86,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SuccessPage = ({ location }) => {
+export default function SuccessPage({ location }) {
   const classes = useStyles()
   const { dispatch } = useContext(storeContext)
   const [copyToolOpen, setCopyToolOpen] = useState(0)
@@ -461,5 +461,3 @@ const SuccessPage = ({ location }) => {
     </>
   )
 }
-
-export default SuccessPage
