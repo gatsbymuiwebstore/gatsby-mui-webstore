@@ -173,10 +173,6 @@ function deploy() {
 }
 ```
 
-## Contributing
-
-Help is very much welcome! If it involves substantial/breaking changes, do open an issue discussion first before submitting a PR.
-
 ## Attribution
 
 Images used for sample products are sourced from Unsplash.
